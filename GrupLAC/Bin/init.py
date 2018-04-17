@@ -22,8 +22,9 @@ Programa_Nacional_Cyt_Grupo;\
 Programa_Nacional_Cyt_Sec_Grupo\n"]
 
 	#Tabla Institucion
-	Institucion = ["idInstitucion; \
-Nombre_Institucion; \
+	Institucion = ["idInstitucion;\
+Numero_Institucion;\
+Nombre_Institucion;\
 Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Produccion

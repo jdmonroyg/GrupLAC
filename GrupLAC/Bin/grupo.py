@@ -68,42 +68,7 @@ def infogrupextract():
         elif cont.string == "Programa nacional de ciencia y tecnología (secundario)":
             Programa_Nacional_Cyt_Sec_Grupo= container[x+1].string.strip()
     
-    container = containers[all2].findAll("td")
-    for x in range(0,len(container)-1):
-        cont = container[x]
-        if cont.string == "Plan Estratégico":
-            Plan_Estrategico_Grupo= container[x+1].text.strip().replace("\n","").replace("\r\n\r\n","").replace("\r\n","").replace("\r","").replace("\r\r","").replace("ˇ"," ").replace(";",",")
-    #Depurando tabla Plan Estrategico Grupo
-    #Vision
-    index1 = Plan_Estrategico_Grupo.find("Visión:")
-    index2 = len(Plan_Estrategico_Grupo)
-    Pe_Vision_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
-    Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
-    #Retos
-    index1 = Plan_Estrategico_Grupo.find("Retos:")
-    index2 = len(Plan_Estrategico_Grupo)
-    Pe_Retos_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
-    Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
-    #Objetivos
-    index1 = Plan_Estrategico_Grupo.find("Objetivos:")
-    index2 = len(Plan_Estrategico_Grupo)
-    Pe_Objetivos_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
-    Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
-    #Estado del arte
-    index1 = Plan_Estrategico_Grupo.find("Estado del arte:")
-    index2 = len(Plan_Estrategico_Grupo)
-    Pe_Earte_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
-    Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
-    #Plan de trabajo
-    index1 = Plan_Estrategico_Grupo.find("Plan de trabajo:")
-    index2 = len(Plan_Estrategico_Grupo)
-    Pe_Ptrabajo_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
     
-    #Pe_Ptrabajo_Grupo="aa"
-    #Pe_Earte_Grupo="aa"
-    #Pe_Objetivos_Grupo="aa"
-    #Pe_Retos_Grupo="aa"
-    #Pe_Vision_Grupo="aa"
     
     Col_Grupo.append(RH+ ";"\
 +name+ ";"\

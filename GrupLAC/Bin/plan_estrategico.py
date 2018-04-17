@@ -1,5 +1,5 @@
 def pegrupextract():
-    from settings import my_url, name, director, RH, containers, COD_PLAN
+    from settings import my_url, name, director, RH, containers
     from init import Plan_Estrategico
     import re
     global contpegrup
@@ -8,7 +8,7 @@ def pegrupextract():
     #inicializo los campos de grupo
     
     Plan_Estrategico_Grupo=""
-    idPlan= COD_PLAN
+    idPlan= ""
     Pe_Ptrabajo_Grupo=""
     Pe_Earte_Grupo=""
     Pe_Objetivos_Grupo=""
@@ -37,27 +37,27 @@ def pegrupextract():
     #Vision
     index1 = Plan_Estrategico_Grupo.find("Visión:")
     index2 = len(Plan_Estrategico_Grupo)
-    Pe_Vision_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
+    Pe_Vision_Grupo=Plan_Estrategico_Grupo[index1+7:index2].replace(";",",")
     Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
     #Retos
     index1 = Plan_Estrategico_Grupo.find("Retos:")
     index2 = len(Plan_Estrategico_Grupo)
-    Pe_Retos_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
+    Pe_Retos_Grupo=Plan_Estrategico_Grupo[index1+6:index2].replace(";",",")
     Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
     #Objetivos
     index1 = Plan_Estrategico_Grupo.find("Objetivos:")
     index2 = len(Plan_Estrategico_Grupo)
-    Pe_Objetivos_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
+    Pe_Objetivos_Grupo=Plan_Estrategico_Grupo[index1+10:index2].replace(";",",")
     Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
     #Estado del arte
     index1 = Plan_Estrategico_Grupo.find("Estado del arte:")
     index2 = len(Plan_Estrategico_Grupo)
-    Pe_Earte_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
+    Pe_Earte_Grupo=Plan_Estrategico_Grupo[index1+16:index2].replace(";",",")
     Plan_Estrategico_Grupo=Plan_Estrategico_Grupo[0:index1]
     #Plan de trabajo
     index1 = Plan_Estrategico_Grupo.find("Plan de trabajo:")
     index2 = len(Plan_Estrategico_Grupo)
-    Pe_Ptrabajo_Grupo=Plan_Estrategico_Grupo[index1:index2].replace(";",",")
+    Pe_Ptrabajo_Grupo=Plan_Estrategico_Grupo[index1+16:index2].replace(";",",")
     
     #Pe_Ptrabajo_Grupo="aa"
     #Pe_Earte_Grupo="aa"
@@ -74,6 +74,6 @@ def pegrupextract():
 +str(Pe_Vision_Grupo)+";"\
 + "\n")
     #print (init.Col_Grupo)
-    print (Plan_Estrategico)
+    #print (Plan_Estrategico)
     #COD_PLAN=COD_PLAN+1
     #contpegrup = [COD_PLAN]

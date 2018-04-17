@@ -29,8 +29,10 @@ sys.path.append('../Bin')
 import grupo
 import init
 import plan_estrategico
+import institucion
+
 os.chdir(Dir)
-global COD_PRODUCTO, COD_GRUPO, COD_PLAN
+global COD_PRODUCTO
 condition = 0
 
 
@@ -97,12 +99,13 @@ for q in range(2,total):
     #+ "('" + str(RH) + "','" + str(doc) + "');\n")
     
     if my_url != '-':
-        #grupo.infogrupextract()
+        grupo.infogrupextract()
         
         plan_estrategico.pegrupextract()
         #from plan_estrategico import contpegrup
         #COD_PRODUCTO = int("".join(str(x) for x in contpegrup))
         
+        institucion.instextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
         if q==total-1:
             logging.shutdown()
@@ -117,4 +120,4 @@ for q in range(2,total):
             print ("***********************************************************************************************")
             sys.exit()
     COD_PRODUCTO = 1;
-    COD_PLAN = 1; 
+    
