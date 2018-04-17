@@ -1,0 +1,10 @@
+<table style="border:#999 1px solid;" width="100%">
+<tr>
+<td class="celdaEncabezado">Instituciones</td>
+</tr>
+<tr>
+<td class="celdas1">
+                    1.- Universidad Nacional De Colombia - Oficial -  (Avalado)
+                </td>
+</tr>
+</table>

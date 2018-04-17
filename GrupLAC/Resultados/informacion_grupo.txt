@@ -1,0 +1,64 @@
+<table style="border:#999 1px solid;" width="100%">
+<tr>
+<td class="celdaEncabezado" colspan="2">Datos básicos</td>
+</tr>
+<tr>
+<td class="celdasTitulo" width="40%">Año y mes de formación</td>
+<td class="celdas2">1998 - 10</td>
+</tr>
+<tr>
+<td class="celdasTitulo">Departamento - Ciudad</td>
+<td class="celdas2">BOGOTÁ, D. C. - BOGOTÁ, D.C. </td>
+</tr>
+<tr>
+<td class="celdasTitulo">Líder</td>
+<td class="celdas2">ERNESTO CORDOBA NIETO</td>
+</tr>
+<tr>
+<td class="celdasTitulo">¿La información de este grupo se ha certificado? </td>
+<td class="celdas2">
+                    Si el día 2016-01-14
+                </td>
+</tr>
+<tr>
+<td class="celdasTitulo">Página web</td>
+<td class="celdas2">
+<a href="http://aplicaciones.virtual.unal.edu.co/blogs/dimaun/" target="_blank">
+                        http://aplicaciones.virtual.unal.edu.co/blogs/dimaun/
+                    </a>
+</td>
+</tr>
+<tr>
+<td class="celdasTitulo">E-mail</td>
+<td class="celdas2">
+<a href="mailto:ecordoban@unal.edu.co" target="_blank">
+                        ecordoban@unal.edu.co
+                    </a>
+</td>
+</tr>
+<tr>
+<td class="celdasTitulo">Clasificación</td>
+<td class="celdas2">
+
+                                A
+                                con vigencia
+
+                                  hasta  2019-12-05 - Convocatoria 781 de 2017     
+                                  <br/>
+</td>
+</tr>
+<tr>
+<td class="celdasTitulo">Área de conocimiento</td>
+<td class="celdas2">
+                    Ingeniería y Tecnología -- Otras Ingenierías y Tecnologías
+                </td>
+</tr>
+<tr>
+<td class="celdasTitulo">Programa nacional de ciencia y tecnología</td>
+<td class="celdas2">Ciencia, Tecnología e Innovación en Ingeniería</td>
+</tr>
+<tr>
+<td class="celdasTitulo">Programa nacional de ciencia y tecnología (secundario)</td>
+<td class="celdas2">Ciencias Básicas</td>
+</tr>
+</table>
