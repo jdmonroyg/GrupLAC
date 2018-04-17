@@ -48,6 +48,10 @@ def intextract():
                 if len(aux)>=3:
                     Inicio_Vinculacion_Integrante= aux[0]
                     Fin_Vinculacion_Integrante=aux[2]
+                else:
+                    Inicio_Vinculacion_Integrante= Inicio_Vinculacion_Integrante + aux[a] + " "
+                    Fin_Vinculacion_Integrante= Fin_Vinculacion_Integrante + aux[a] + " "
+
 
         Integrante.append(str(len(Integrante))+ ";"\
 +str(contint) + ";"\
