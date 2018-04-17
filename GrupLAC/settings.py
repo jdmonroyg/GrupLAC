@@ -26,10 +26,8 @@ start_time = time.time()
 Dir = os.getcwd()
 os.chdir(Dir+"/Bin")
 sys.path.append('../Bin')
-import grupo
-import init
-import plan_estrategico
-import institucion
+
+import grupo, init, plan_estrategico, institucion, linea, sector, integrante
 
 os.chdir(Dir)
 global COD_PRODUCTO
@@ -99,13 +97,15 @@ for q in range(2,total):
     #+ "('" + str(RH) + "','" + str(doc) + "');\n")
     
     if my_url != '-':
-        grupo.infogrupextract()
-        
-        plan_estrategico.pegrupextract()
         #from plan_estrategico import contpegrup
-        #COD_PRODUCTO = int("".join(str(x) for x in contpegrup))
+        #COD_PRODUCTO = int("".join(str(x) for x in contpegrup))        
         
+        grupo.infogrupextract()
+        plan_estrategico.pegrupextract()
         institucion.instextract()
+        linea.linextract()
+        sector.secextract()
+        integrante.intextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
         if q==total-1:
             logging.shutdown()

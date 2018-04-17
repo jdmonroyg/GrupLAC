@@ -41,20 +41,24 @@ Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Linea
 	Linea = ["idLinea; \
+Numero_Linea;\
 Nombre_Linea; \
 Col_Grupo_Codigo_GrupLAC\n"]
 	
 	#Tabla Sector
 	Sector = ["idSector; \
+Numero_Sector;\
 Nombre_Sector; \
 Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Integrante
 	Integrante = ["idIntegrante; \
+Numero_Integrante;\
 Nombre_Integrante; \
 Vinculacion_Integrante; \
 Hora_Dedicacion_Integrante; \
-Inicio_Fin_Vinculacion_Integrante; \
+Inicio_Vinculacion_Integrante; \
+Fin_Vinculacion_Integrante; \
 Col_Grupo_Codigo_GrupLAC\n"]
 	
 	Plan_Estrategico = ["idPlan;\
