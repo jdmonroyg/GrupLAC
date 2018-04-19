@@ -47,3 +47,11 @@ for item in init.Integrante:
     except UnicodeEncodeError:
         pass
 f.close()
+
+f = open ("./Resultados/Produccion_Grupo.csv", "w")
+for item in init.Produccion:
+    #try:
+    f.write(item)
+    #except UnicodeEncodeError:
+       #pass
+f.close()

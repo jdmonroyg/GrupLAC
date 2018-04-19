@@ -35,7 +35,7 @@ Validacion_Produccion; \
 N_Registro_Produccion; \
 Descripcion_Produccion; \
 Nombre_Produccion;\
-Informacion_Produccion;\
+Informacion_Adicional_Produccion;\
 Autores_Produccion; \
 Col_Grupo_Codigo_GrupLAC\n"]
 

@@ -27,7 +27,7 @@ Dir = os.getcwd()
 os.chdir(Dir+"/Bin")
 sys.path.append('../Bin')
 
-import grupo, init, plan_estrategico, institucion, linea, sector, integrante
+import grupo, init, plan_estrategico, institucion, linea, sector, integrante, produccion
 
 os.chdir(Dir)
 global COD_PRODUCTO
@@ -100,12 +100,13 @@ for q in range(2,total):
         #from plan_estrategico import contpegrup
         #COD_PRODUCTO = int("".join(str(x) for x in contpegrup))        
         
-        grupo.infogrupextract()
-        plan_estrategico.pegrupextract()
-        institucion.instextract()
-        linea.linextract()
-        sector.secextract()
-        integrante.intextract()
+        #grupo.infogrupextract()
+        #plan_estrategico.pegrupextract()
+        #institucion.instextract()
+        #linea.linextract()
+        #sector.secextract()
+        #integrante.intextract()
+        produccion.prodbiblioextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
         if q==total-1:
             logging.shutdown()
