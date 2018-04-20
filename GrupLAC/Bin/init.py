@@ -28,27 +28,27 @@ Nombre_Institucion;\
 Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Produccion
-	Produccion = ["idProduccion; \
-Clasificacion_Produccion; \
-Tipo_Produccion; \
-Validacion_Produccion; \
-N_Registro_Produccion; \
-Descripcion_Produccion; \
+	Produccion = ["idProduccion;\
+Clasificacion_Produccion;\
+Tipo_Produccion;\
+Validacion_Produccion;\
+N_Registro_Produccion;\
+Descripcion_Produccion;\
 Nombre_Produccion;\
 Informacion_Adicional_Produccion;\
-Autores_Produccion; \
+Autores_Produccion;\
 Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Linea
-	Linea = ["idLinea; \
+	Linea = ["idLinea;\
 Numero_Linea;\
-Nombre_Linea; \
+Nombre_Linea;\
 Col_Grupo_Codigo_GrupLAC\n"]
 	
 	#Tabla Sector
 	Sector = ["idSector; \
 Numero_Sector;\
-Nombre_Sector; \
+Nombre_Sector;\
 Col_Grupo_Codigo_GrupLAC\n"]
 
 	#Tabla Integrante

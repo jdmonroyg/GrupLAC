@@ -101,3 +101,41 @@ Col_Grupo.append(RH + ";"\
 +str(Programa_Nacional_Cyt_Sec_Grupo)+ ";"\
 +str("aaa") + ";"\
 + "\n")
+
+
+
+
+aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ñ").replace("ň","ñ").replace("ě","e")
+            #for a in range(0,len(aux)):
+            #    informacion= informacion + aux[a] + " "
+index1 = aux.find("Autores:")
+index2 = len(aux)
+informacion=aux[index1+8:index2].split()
+for a in range(0,len(informacion)):
+    Autores_Produccion= Autores_Produccion + informacion[a] + " "
+aux=aux[0:index1]
+
+index1 = aux.find(".-")
+index2 = len(aux)
+informacion=aux[0:index1].split()
+for b in range(0,len(informacion)):
+    N_Registro_Produccion= N_Registro_Produccion + informacion[b] + " "
+aux=aux[index1+2:index2]
+
+index1 = aux.find(":")
+index2 = len(aux)
+informacion=aux[0:index1].split()
+for c in range(0,len(informacion)):
+    Descripcion_Produccion= Descripcion_Produccion + informacion[c] + " "
+aux=aux[index1+1:index2]
+
+index1 = aux.find("\n")
+index2 = len(aux)
+informacion=aux[0:index1].split()
+for d in range(0,len(informacion)):
+    Nombre_Produccion= Nombre_Produccion + informacion[d] + " "
+aux=aux[index1+1:index2]
+
+informacion=aux.split()
+for f in range(0,len(informacion)):
+    Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
