@@ -50,8 +50,8 @@ f.close()
 
 f = open ("./Resultados/Produccion_Grupo.csv", "w")
 for item in init.Produccion:
-    try:
-        f.write(item)
-    except UnicodeEncodeError:
-       pass
+    #try:
+    f.write(item)
+    #except UnicodeEncodeError:
+       #pass
 f.close()

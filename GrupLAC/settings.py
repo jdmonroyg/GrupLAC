@@ -107,7 +107,7 @@ for q in range(2,total):
         #linea.linextract()
         #sector.secextract()
         #integrante.intextract()
-        produccion.prodbiblioextract()
+        produccion.prodgrupextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
         if q==total-1:
             logging.shutdown()
