@@ -1,6 +1,10 @@
 def tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
     from init import Produccion
-    for x in range(1,len(container)):
+    aux=1
+    #la tabla guias y proyectos tiene un tr fantasma
+    if Tipo_Produccion == "Guias de práctica clínica" or Tipo_Produccion=="Proyectos de ley":
+        aux=2
+    for x in range(aux,len(container)):
         
         Validacion_Produccion="No"
         N_Registro_Produccion=""
@@ -14,7 +18,7 @@ def tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ñ").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("+","(simbolo más)")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ñ").replace("ň","ñ").replace("ě","e").replace('"'," ")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Autores:")
@@ -48,7 +52,10 @@ def tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo
             informacion=informacion=aux.split()
             for f in range(0,len(informacion)):
                 Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
-        
+            
+            if Tipo_Produccion=="Signos distintivos":
+                Autores_Produccion="No aplica"
+
         Produccion.append(str(len(Produccion))+ ";"\
 +str(Clasificacion_Produccion) + ";"\
 +str(Tipo_Produccion) + ";"\
@@ -149,7 +156,7 @@ def prodgrupextract():
                 pro_ley=a
             elif buscarinfo.td.string =="Signos distintivos ":
                 sig_dis=a
-            elif buscarinfo.td.string =="Softwares":
+            elif buscarinfo.td.string =="Softwares ":
                 softwar=a
             elif buscarinfo.td.string =="Empresas de base tecnológica ":
                 emp_bas_tec=a
@@ -247,20 +254,24 @@ def prodgrupextract():
     Tipo_Produccion="Reglamentos técnicos"
     tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
     #pendiente
-    #container = containers[gui_pra_cli].findAll("tr")
-    #Tipo_Produccion="Guias de práctica clínica"
-    #tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+    container = containers[gui_pra_cli].findAll("tr")
+    Tipo_Produccion="Guias de práctica clínica"
+    tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
     #pendiente
-    #container = containers[pro_ley].findAll("tr")
-    #Tipo_Produccion="Proyectos de ley"
-    #tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
-    #pendiente
+    container = containers[pro_ley].findAll("tr")
+    Tipo_Produccion="Proyectos de ley"
+    tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+    
     container = containers[sig_dis].findAll("tr")
     Tipo_Produccion="Signos distintivos"
     tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
 
     container = containers[softwar].findAll("tr")
     Tipo_Produccion="Softwares"
+    tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+
+    container = containers[emp_bas_tec].findAll("tr")
+    Tipo_Produccion="Empresas de base tecnológica"
     tablaextrat(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
     
     """
