@@ -72,7 +72,7 @@ if len(sys.argv) > 1:
     logging.basicConfig(level=level)
 
 print("------> Los GrupLAC han sido cargados, Estado: " + str(1/(total-1)*100) + "%")
-print(total)
+#print(total)
 #2
 for q in range(2,total):
     director = sheet['A'+str(q)].value

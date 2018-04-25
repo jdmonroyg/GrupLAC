@@ -1,36 +1,8 @@
 
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-global Col_Grupo
 
-Col_Grupo = ["Codig_GrupLAC; \
-Nombre_Grupo; \
-Ano_Mes_Formacion_Grupo; \
-Departamento_Ciudad_Grupo; \
-Lider_Grupo; \
-Certificado_Grupo; \
-Pagina_Web_Grupo; \
-Email_Grupo; \
-Clasificacion_Grupo; \
-Area_Conocimiento_Grupo; \
-Programa_Nacional_Cyt_Grupo; \
-Programa_Nacional_Cyt_Sec_Grupo; \
-Plan_Estrategico_Grupo\n"]
-
-Ano_Mes_Formacion_Grupo=""
-Departamento_Ciudad_Grupo=""
-Lider_Grupo=""
-Certificado_Grupo=""
-Pagina_Web_Grupo=""
-Email_Grupo=""
-Clasificacion_Grupo=""
-Area_Conocimiento_Grupo=""
-Programa_Nacional_Cyt_Grupo=""
-Programa_Nacional_Cyt_Sec_Grupo=""
-my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000000724"
-index1 = my_url.find("nro=") 
-index2 = len(my_url)
-RH = my_url[index1:index2]
+my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000000422"
 
 uClient = uReq(my_url)
 page_html = uClient.read() 
@@ -59,7 +31,7 @@ for a in range(0,len(containers)):
 	        #print(all)
 	except AttributeError:
 	    pass
-container = containers[all].findAll("td")
+container = containers[all].findAll("tr")
 containerb = containers[all].findAll("a")
 for x in range(0, len(container)-1):
     #td class="celdasTitulo"
