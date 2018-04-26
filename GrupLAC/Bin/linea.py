@@ -26,7 +26,7 @@ def linextract():
     for x in range(1,len(container)):
         if container[0].string == "Líneas de investigación declaradas por el grupo":
             contlin=contlin+1
-            aux= container[x].string.replace("\n","").split()
+            aux= container[x].string.replace("\n","").replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","").split()
             for x in range(0,len(aux)):
                 Nombre_Linea= Nombre_Linea + aux[x] + " "
             index1=Nombre_Linea.find(".- ")+3

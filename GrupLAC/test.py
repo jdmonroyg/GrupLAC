@@ -1,13 +1,12 @@
-
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-
-my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000000422"
+#import html5lib
+my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000008037"
 
 uClient = uReq(my_url)
 page_html = uClient.read() 
 uClient.close()
-
+#page_soup = soup(page_html,"html5lib")
 page_soup = soup(page_html,"html.parser") #convierte a codigo html
 containers = page_soup.findAll("table")
 

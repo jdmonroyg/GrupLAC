@@ -58,7 +58,7 @@ def infogrupextract():
         elif cont.string == "E-mail":
             Email_Grupo= containerb[1].string.strip()
         elif cont.string == "Clasificación":
-            aux= container[x+1].text.strip().replace("\n","").split()
+            aux= container[x+1].text.strip().replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","").split()
             for x in range(0,len(aux)):
                 Clasificacion_Grupo= Clasificacion_Grupo + aux[x] + " " 
         elif cont.string == "Área de conocimiento":

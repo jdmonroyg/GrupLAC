@@ -21,7 +21,8 @@
 
 import openpyxl, sys, os, time, logging
 from urllib.request import urlopen as uReq
-from bs4 import BeautifulSoup as soup       
+from bs4 import BeautifulSoup as soup
+import html5lib       
 start_time = time.time()
 Dir = os.getcwd()
 os.chdir(Dir+"/Bin")
@@ -88,7 +89,9 @@ for q in range(2,total):
     page_html = uClient.read() 
     uClient.close()
     page_soup = soup(page_html,"html.parser") #convierte a codigo html
+    page_soup2 = soup(page_html,"html5lib")
     containers = page_soup.findAll("table")
+    containers2=page_soup2.findAll("table")
 
 
     #init.Col_Grupo.append(str(doc) + ";"\
@@ -101,12 +104,12 @@ for q in range(2,total):
         #from plan_estrategico import contpegrup
         #COD_PRODUCTO = int("".join(str(x) for x in contpegrup))        
         
-        #grupo.infogrupextract()
-        #plan_estrategico.pegrupextract()
-        #institucion.instextract()
-        #linea.linextract()
-        #sector.secextract()
-        #integrante.intextract()
+        grupo.infogrupextract()
+        plan_estrategico.pegrupextract()
+        institucion.instextract()
+        linea.linextract()
+        sector.secextract()
+        integrante.intextract()
         produccion.prodgrupextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
         if q==total-1:

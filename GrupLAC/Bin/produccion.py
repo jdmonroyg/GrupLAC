@@ -18,7 +18,7 @@ def tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tip
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","ã").replace("Ă","Ã").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Autores:")
@@ -53,7 +53,7 @@ def tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tip
             for f in range(0,len(informacion)):
                 Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
             
-            if Tipo_Produccion=="Signos distintivos":
+            if Tipo_Produccion=="Signos distintivos" or Tipo_Produccion=="Proyectos" :
                 Autores_Produccion="No aplica"
 
         Produccion.append(str(len(Produccion))+ ";"\
@@ -395,9 +395,8 @@ def prodgrupextract():
     tablaestrategiasextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
 
     #pendiente
-    #container = containers[produc_arte_arqui_dise].findAll("tr")
-    #Tipo_Produccion="Obras o productos"
-    #tablaproduccionaadextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+    Tipo_Produccion="Obras o productos"
+    tablaproduccionaadextract(produc_arte_arqui_dise,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
 
 
     ####################################################################
@@ -430,11 +429,15 @@ def prodgrupextract():
     container = containers[participacion_comite_evaluacion].findAll("tr")
     Tipo_Produccion="Participación en comités de evaluación"
     tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
-    """
-    Jurado/Comisiones evaluadoras de trabajo de grado
-    Participación en comités de evaluación
-    Demás trabajos
-    Proyectos"""
+
+    container = containers[demas_trabajo].findAll("tr")
+    Tipo_Produccion="Demás trabajos"
+    tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+
+    container = containers[proyectos].findAll("tr")
+    Tipo_Produccion="Proyectos"
+    tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion)
+
 
 
 def tablaeventcientiextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
@@ -455,7 +458,7 @@ def tablaeventcientiextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","a").replace("Ă","A").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Instituciones asociadas")
@@ -523,7 +526,7 @@ def tablaredesconociespeciextract(container,Clasificacion_Produccion,Col_Grupo_C
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","a").replace("Ă","A").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Número de participantes:")
@@ -584,14 +587,14 @@ def tablaestrategiasextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
         Descripcion_Produccion=""
         Nombre_Produccion=""    
         Informacion_Adicional_Produccion=""    
-        Autores_Produccion="no aplica"
+        Autores_Produccion="No aplica"
         
         containerb = container[x].findAll("td")
         
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","a").replace("Ă","A").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Descripción:")
@@ -644,14 +647,14 @@ def tablaespaciosparticipaextract(container,Clasificacion_Produccion,Col_Grupo_C
         Descripcion_Produccion=""
         Nombre_Produccion=""    
         Informacion_Adicional_Produccion=""    
-        Autores_Produccion="no aplica"
+        Autores_Produccion="No aplica"
         
         containerb = container[x].findAll("td")
         
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","a").replace("Ă","A").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
 
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
@@ -700,13 +703,30 @@ def tablaespaciosparticipaextract(container,Clasificacion_Produccion,Col_Grupo_C
 +str(Col_Grupo_Codigo_GrupLAC) + ";"\
 + "\n")
 
-# Con errores
-""" 
-def tablaproduccionaadextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
+
+def tablaproduccionaadextract(produc_arte_arqui_dise,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
     from init import Produccion
+    from settings import containers2
+    container = containers2[produc_arte_arqui_dise].findAll("tr")
     iterador=1
-    contador=1
+    contador=0
     for x in range(iterador,len(container)):
+        if container[x].td.string == "Obras o productos":
+            Tipo_Produccion= "Obras o productos"
+            contador=1
+            continue
+        elif container[x].td.string == "Industrias creativas y culturales":
+            Tipo_Produccion= "Industrias creativas y culturales"
+            contador=1
+            continue
+        elif container[x].td.string == "Eventos Artísticos":
+            Tipo_Produccion= "Eventos Artísticos"
+            contador=1
+            continue
+        elif container[x].td.string == "Talleres de Creación":
+            Tipo_Produccion= "Talleres de Creación"
+            contador=1
+            continue
         
         Validacion_Produccion="No"
         N_Registro_Produccion=""
@@ -716,34 +736,28 @@ def tablaproduccionaadextract(container,Clasificacion_Produccion,Col_Grupo_Codig
         Autores_Produccion="no aplica"
         
         containerb = container[x].findAll("td")
-        if len(containerb)<=1:
-            break
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
-
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ"," ").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ñ").replace("ě","e").replace('"'," ").replace("č","c").replace("ă","a").replace("Ă","A").replace("ˇ"," ").replace("³","").replace("ł"," ").replace("Č","É").replace("Ě","Í")
+            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
             N_Registro_Produccion=contador
             Autores_Produccion="no aplica"
             contador =contador + 1
 
-            index1 = aux.find("Nombre del Producto:")
-            index2 = aux.find("Fecha de creación:")
+            index1 = aux.find(":")
             index3 =len(aux)
-            informacion=aux[index1+20:index2].split()
+            informacion=aux[0:index1].split()
             for a in range(0,len(informacion)):
-                Nombre_Produccion= Nombre_Produccion + informacion[a] + " "
-            aux=aux[index2:index3]
+                Descripcion_Produccion= Descripcion_Produccion + informacion[a] + " "
+            aux=aux[index1+1:index3]
             
-
-            index1 = index2
-            index2 = aux.find("\n\n")
-            informacion=aux[index1:index2].split()
+            index2 = aux.find("\n")
+            informacion=aux[0:index1].split()
             for c in range(0,len(informacion)):
-                Descripcion_Produccion= Descripcion_Produccion + informacion[c] + " "
+                Nombre_Produccion= Nombre_Produccion + informacion[c] + " "
             aux=aux[index2:index3]
 
-            informacion=informacion=aux.split()
+            informacion=aux.split()
             for f in range(0,len(informacion)):
                 Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
             
@@ -759,4 +773,3 @@ def tablaproduccionaadextract(container,Clasificacion_Produccion,Col_Grupo_Codig
 +str(Autores_Produccion) + ";"\
 +str(Col_Grupo_Codigo_GrupLAC) + ";"\
 + "\n")
-"""

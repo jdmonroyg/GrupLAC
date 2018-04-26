@@ -30,7 +30,7 @@ def pegrupextract():
     for x in range(0,len(container)-1):
         cont = container[x]
         if cont.string == "Plan Estratégico":
-            Plan_Estrategico_Grupo= container[x+1].text.strip().replace("\n","").replace("\r\n\r\n","").replace("\r\n","").replace("\r","").replace("\r\r","").replace("ˇ"," ").replace(";","|").replace("ń","ñ").replace('"',"").replace("'","").replace("ż","¿")
+            Plan_Estrategico_Grupo= container[x+1].text.strip().replace("\n","").replace("\r\n\r\n","").replace("\r\n","").replace("\r","").replace("\r\r","").replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("'","").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
 
 
     #Depurando tabla Plan Estrategico Grupo
