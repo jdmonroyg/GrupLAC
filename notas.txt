@@ -1,0 +1,22 @@
+import csv
+Plan_Estrategico = [["idPlan;\
+Col_Grupo_Codigo_GrupLAC;\
+Pe_Ptrabajo_Grupo;\
+Pe_Earte_Grupo;\
+Pe_Objetivos_Grupo;\
+Pe_Retos_Grupo;\
+Pe_Vision_Grupo\n"]]
+Plan_Estrategico.append([str(len(Plan_Estrategico))+ ";"\
++RH + ";"\
++str(Pe_Ptrabajo_Grupo) + ";"\
++str(Pe_Earte_Grupo) + ";"\
++str(Pe_Objetivos_Grupo) + ";"\
++str(Pe_Retos_Grupo) + ";"\
++str(Pe_Vision_Grupo)+"\n"])
+
+f = open ("./Resultados/Plan_Estrategico_Grupo.csv", "w",newline='', encoding='utf16')
+with f:
+    salida =csv.writer(f, delimiter=';')
+    
+    salida.writerows(init.Plan_Estrategico)
+f.close()
