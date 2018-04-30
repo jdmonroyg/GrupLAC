@@ -1,0 +1,9 @@
+http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001545295
+
+http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000000724
+
+http://www.charactercountonline.com/
+
+https://www.dataquest.io/blog/web-scraping-tutorial-python/
+
+https://www.textmagic.com/free-tools/unicode-detector
