@@ -1,1 +1,6 @@
 Ninguna
+
+aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+.replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
+.replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
+.replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")

@@ -1,7 +1,7 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 #import html5lib
-my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000008037"
+my_url = "http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000000415"
 
 uClient = uReq(my_url)
 page_html = uClient.read() 

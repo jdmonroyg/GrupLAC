@@ -52,8 +52,8 @@ while condition != 1:
 print ("------> Inicio de Importación de Registros.")
 wb = openpyxl.load_workbook('./Input/Base.xlsx')
 sheet = wb['Sheet1']
-#total = 7
-total = sheet.max_row +1
+total = 45
+#total = sheet.max_row +1
 COD_PRODUCTO = 1
 COD_PLAN = 1
 
@@ -74,8 +74,8 @@ if len(sys.argv) > 1:
 
 print("------> Los GrupLAC han sido cargados, Estado: " + str(1/(total-1)*100) + "%")
 #print(total)
-#2
-for q in range(2,total):
+#2,total
+for q in range(30,total):
     director = sheet['A'+str(q)].value
     name = sheet['B'+str(q)].value
     #last = sheet['C'+str(q)].value
@@ -112,6 +112,7 @@ for q in range(2,total):
         integrante.intextract()
         produccion.prodgrupextract()
         print("------> "+ name + " por " + director + " ha sido procesado, Estado: " + str(q/(total-1)*100) + "%")
+        
         if q==total-1:
             logging.shutdown()
             print ("------> Escribiendo las bases de datos.")

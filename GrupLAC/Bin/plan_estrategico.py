@@ -30,9 +30,20 @@ def pegrupextract():
     for x in range(0,len(container)-1):
         cont = container[x]
         if cont.string == "Plan Estratégico":
-            Plan_Estrategico_Grupo= container[x+1].text.strip().replace("\n","").replace("\r\n\r\n","").replace("\r\n","").replace("\r","").replace("\r\r","").replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ").replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó").replace("ň","ó").replace('"'," ").replace("'","").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","").replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì").replace("ł","")
-
-
+            Plan_Estrategico_Grupo= container[x+1].text.strip().replace("\n","")\
+.replace("\r\n\r\n","").replace("\r\n","").replace("\r","").replace("\r\r","")\
+.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+.replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
+.replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
+.replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
+.replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
+.replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
+.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
+.replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
+.replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
+.replace("aspx"+"\u0301","?")
     #Depurando tabla Plan Estrategico Grupo
     #Vision
     index1 = Plan_Estrategico_Grupo.find("Visión:")
