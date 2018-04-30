@@ -1,6 +1,3 @@
-
-
-    
 def infogrupextract():
     from settings import my_url, name, director, RH, containers
     from init import Col_Grupo
@@ -82,11 +79,6 @@ def infogrupextract():
 +str(Area_Conocimiento_Grupo)+ ";"\
 +str(Programa_Nacional_Cyt_Grupo)+ ";"\
 +str(Programa_Nacional_Cyt_Sec_Grupo)+ ";"\
-#+str(Pe_Ptrabajo_Grupo) + ";"\
-#+str(Pe_Earte_Grupo) + ";"\
-#+str(Pe_Objetivos_Grupo) + ";"\
-#+str(Pe_Retos_Grupo) + ";"\
-#+str(Pe_Vision_Grupo)+";"\
 + "\n")
     #print (init.Col_Grupo)
     

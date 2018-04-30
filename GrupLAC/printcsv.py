@@ -8,7 +8,7 @@ for item in init.Col_Grupo:
         pass
 f.close()
 
-f = open ("./Resultados/Plan_Estrategico_Grupo.csv", "w")
+f = open ("./Resultados/Plan_Estrategico_Grupo.csv", "w", encoding='utf16')
 for item in init.Plan_Estrategico:
     try:
         f.write(item)
@@ -58,7 +58,7 @@ for item in init.Integrante:
         #pass
 f.close()
 
-f = open ("./Resultados/Produccion_Grupo.csv", "w")
+f = open ("./Resultados/Produccion_Grupo.csv", "w", encoding='utf16')
 for item in init.Produccion:
     try:
         f.write(item)

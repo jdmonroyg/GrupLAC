@@ -18,18 +18,18 @@ def tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tip
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
+#.replace("aspx"+"\u0301","?")
 
 
             #for a in range(0,len(aux)):
@@ -69,16 +69,16 @@ def tablaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tip
             if Tipo_Produccion=="Signos distintivos" or Tipo_Produccion=="Proyectos" :
                 Autores_Produccion="No aplica"
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
 
 
@@ -471,19 +471,18 @@ def tablaeventcientiextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
-            #for a in range(0,len(aux)):
+#.replace("aspx"+"\u0301","?")
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Instituciones asociadas")
             index2 = len(aux)
@@ -520,16 +519,16 @@ def tablaeventcientiextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
             #if Tipo_Produccion=="Signos distintivos":
             #    Autores_Produccion="No aplica"
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
 
 def tablaredesconociespeciextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
@@ -550,18 +549,18 @@ def tablaredesconociespeciextract(container,Clasificacion_Produccion,Col_Grupo_C
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
+#.replace("aspx"+"\u0301","?")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Número de participantes:")
@@ -599,16 +598,16 @@ def tablaredesconociespeciextract(container,Clasificacion_Produccion,Col_Grupo_C
             #if Tipo_Produccion=="Signos distintivos":
             #    Autores_Produccion="No aplica"
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
 
 def tablaestrategiasextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
@@ -629,18 +628,18 @@ def tablaestrategiasextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
+#.replace("aspx"+"\u0301","?")
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
             index1 = aux.find("Descripción:")
@@ -670,16 +669,16 @@ def tablaestrategiasextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_
                 Nombre_Produccion=Nombre_Produccion + informacion[f] + " "
             
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
 
 def tablaespaciosparticipaextract(container,Clasificacion_Produccion,Col_Grupo_Codigo_GrupLAC,Tipo_Produccion):
@@ -700,18 +699,18 @@ def tablaespaciosparticipaextract(container,Clasificacion_Produccion,Col_Grupo_C
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
+#.replace("aspx"+"\u0301","?")
 
             #for a in range(0,len(aux)):
             #    informacion= informacion + aux[a] + " "
@@ -748,16 +747,16 @@ def tablaespaciosparticipaextract(container,Clasificacion_Produccion,Col_Grupo_C
                 Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
             
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
 
 
@@ -796,18 +795,18 @@ def tablaproduccionaadextract(produc_arte_arqui_dise,Clasificacion_Produccion,Co
         if len(containerb[0])>2:
             Validacion_Produccion="Si"
         if len(containerb[1].text)>3:
-            aux=containerb[1].text.replace(";","|").replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
+            aux=containerb[1].text.replace("ż", "¿").replace("Ż","¿").replace("ş"," ")\
 .replace("Ş"," ").replace("ń","ñ").replace("ŕ","á").replace("−","-").replace("Ń","Ñ").replace("Ň","Ó")\
 .replace("ň","ó").replace('"'," ").replace("ă","ó").replace("Ă","ó").replace("ˇ"," ").replace("³","")\
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("\u03b3","(gamma)").replace("\u03b2","(beta)").replace("́ı","í").replace("μ","(mi)")\
-.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>").replace("α","(alfa)")\
+.replace("\u0119","e").replace("́ı","í")\
+.replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\
 .replace("U"+"\u0301","Ú").replace("n"+"\u0303","ñ").replace("\x98","").replace("\u0301"+"e","é")\
-.replace("aspx"+"\u0301","?")
+#.replace("aspx"+"\u0301","?")
             N_Registro_Produccion=contador
             Autores_Produccion="no aplica"
             contador =contador + 1
@@ -830,14 +829,14 @@ def tablaproduccionaadextract(produc_arte_arqui_dise,Clasificacion_Produccion,Co
                 Informacion_Adicional_Produccion=Informacion_Adicional_Produccion + informacion[f] + " "
             
 
-        Produccion.append(str(len(Produccion))+ ";"\
-+str(Clasificacion_Produccion) + ";"\
-+str(Tipo_Produccion) + ";"\
-+str(Validacion_Produccion) + ";"\
-+str(N_Registro_Produccion) + ";"\
-+str(Descripcion_Produccion) + ";"\
-+str(Nombre_Produccion) + ";"\
-+str(Informacion_Adicional_Produccion) + ";"\
-+str(Autores_Produccion) + ";"\
-+str(Col_Grupo_Codigo_GrupLAC) + ";"\
+        Produccion.append(str(len(Produccion))+ "|"\
++str(Clasificacion_Produccion) + "|"\
++str(Tipo_Produccion) + "|"\
++str(Validacion_Produccion) + "|"\
++str(N_Registro_Produccion) + "|"\
++str(Descripcion_Produccion) + "|"\
++str(Nombre_Produccion) + "|"\
++str(Informacion_Adicional_Produccion) + "|"\
++str(Autores_Produccion) + "|"\
++str(Col_Grupo_Codigo_GrupLAC) + "|"\
 + "\n")
