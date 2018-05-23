@@ -9,7 +9,7 @@ uClient.close()
 #page_soup = soup(page_html,"html5lib")
 page_soup = soup(page_html,"html.parser") #convierte a codigo html
 containers = page_soup.findAll("table")
-
+# containers[5].td.string
 all = 0
 all2 = 2
 a = 0

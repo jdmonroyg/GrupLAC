@@ -8,12 +8,12 @@ def pegrupextract():
     #inicializo los campos de grupo
     
     Plan_Estrategico_Grupo=""
-    idPlan= ""
-    Pe_Ptrabajo_Grupo=""
-    Pe_Earte_Grupo=""
-    Pe_Objetivos_Grupo=""
+    idPlan=""
+    Pe_Ptrabajo_Grupo=" "
+    Pe_Earte_Grupo=" "
+    Pe_Objetivos_Grupo=" "
     Pe_Retos_Grupo=" "
-    Pe_Vision_Grupo=""
+    Pe_Vision_Grupo=" "
 
     for a in range(0,len(containers)):
         buscarinfo = containers[a]
@@ -38,7 +38,7 @@ def pegrupextract():
 .replace("Č","É").replace("Ě","Í").replace("Ŕ","Á").replace("Ő","Õ").replace("č","è").replace("ě","ì")\
 .replace("ł","").replace("ﬁ","fi").replace("\u200b","").replace("\u0104","¡").replace("a"+"\u0301","á")\
 .replace("e"+"\u0301","é").replace("i"+"\u0301","í").replace("o"+"\u0301","ó").replace("u"+"\u0301","ú")\
-.replace("\u0119","e").replace("́ı","í").replace("=","").replace("=-S","- S")\
+.replace("\u0119","e").replace("́ı","í").replace("="," ").replace("=-S","- S")\
 .replace("˜","").replace("\uf062","").replace("\uf061","").replace("Ť","<<").replace("ť",">>")\
 .replace("\u010f","í").replace("\u013e","í").replace("\u0131","í").replace("\uf0a7","").replace("ů","ú")\
 .replace("A"+"\u0301","Á").replace("E"+"\u0301","É").replace("I"+"\u0301","Í").replace("O"+"\u0301","Í")\

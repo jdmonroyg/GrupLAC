@@ -59,7 +59,8 @@ Vinculacion_Integrante; \
 Hora_Dedicacion_Integrante; \
 Inicio_Vinculacion_Integrante; \
 Fin_Vinculacion_Integrante; \
-Col_Grupo_Codigo_GrupLAC\n"]
+Col_Grupo_Codigo_GrupLAC;\
+Cod_RH_CvLAC\n"]
 	
 	Plan_Estrategico = ["idPlan|\
 Col_Grupo_Codigo_GrupLAC|\

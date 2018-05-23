@@ -30,9 +30,14 @@ def intextract():
         Hora_Dedicacion_Integrante=""
         Inicio_Vinculacion_Integrante=""
         Fin_Vinculacion_Integrante=""
+        Cod_RH_CvLAC=""
         if container[0].string == "Integrantes del grupo":
         
             Nombre_Integrante=containerb[contint].string.replace("ń","ñ").replace("Ń","Ñ")
+            link_CvLAC = containerb[contint].get("href")
+            index1=link_CvLAC.find("cod_rh")
+            index2=len(link_CvLAC)
+            Cod_RH_CvLAC=link_CvLAC[index1:index2]
             contint=contint+1
             
             aux= container[x+1].string.replace("\n","").split()
@@ -61,4 +66,5 @@ def intextract():
 +str(Inicio_Vinculacion_Integrante) + ";"\
 +str(Fin_Vinculacion_Integrante) + ";"\
 +str(Col_Grupo_Codigo_GrupLAC) + ";"\
++str(Cod_RH_CvLAC) + ";"\
 + "\n")
